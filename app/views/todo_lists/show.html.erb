@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-heading">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo_list.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @todo_list.description %>
-</p>
-
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Back', todo_lists_path %>
+  <div class="panel-heading">
+    <h1>
+      <strong><%= @todo_list.title %></strong>
+    </h2>
+  </div>
+  <div class="panel-body">
+    <p>
+      <%= @todo_list.description %>
+    </p>
+  </div>
+  
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: "btn btn-info" %>
+    <%= link_to 'Back', todo_lists_path, class: "btn btn-warning" %>
+  </div>
+</div>

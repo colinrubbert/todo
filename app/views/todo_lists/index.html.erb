@@ -1,27 +1,37 @@
-<h1>Listing todo_lists</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Current To Do Lists</h1>
+  </div>
+  
+  <div class="panel-body">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Created By</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @todo_lists.each do |todo_list| %>
+          <tr>
+              <td><%= todo_list.title %></td>
+              <td><%= todo_list.description %></td>
+              <td><%= todo_list.user.email %></td>
+              <td><%= link_to 'Show', todo_list %></td>
+              <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
+              <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-  <tbody>
-    <% @todo_lists.each do |todo_list| %>
-      <tr>
-        <td><%= todo_list.title %></td>
-        <td><%= todo_list.description %></td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Todo list', new_todo_list_path %>
+    <br>
+  <div class="panel-footer">
+    <%= link_to 'New Todo list', new_todo_list_path, class: "btn btn-info" %>
+    <%= link_to "Log Out", destroy_user_session_path,  class: "btn btn-warning", method: :delete %>
+  </div>
+</div>
