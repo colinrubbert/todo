@@ -43,7 +43,7 @@ class TodoListsController < ApplicationController
   
     def set_todo_list
       @todo_list = current_user.TodoLists.find_by(id: params[:id])
-      redirect_to todo_lists_path if @todo_list.nil?
+      redirect_to todo_lists_path notice: "You Don't Belong Here" if @todo_list.nil?
     end
 
     def todo_list_params
