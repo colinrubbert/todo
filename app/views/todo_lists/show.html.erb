@@ -1,27 +1,19 @@
-<div class="panel panel-heading">
-    <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <div class="panel-heading">
-    <h1>
-      <strong><%= @todo_list.title %></strong>
-    </h1>
-  </div>
+<h1 class="tdl_title"><%= @todo_list.title %></h1>
+<p class="tdl_sub_title"><%= @todo_list.description %></p>
+
+<div id="todo_items_wrapper">
+  <%= render @todo_list.todo_items %>
+</div>
+
+<div id="form">
+  <%= render "todo_items/form" %>
+</div>
+
   
-  <div class="panel-body">
-    <p>
-      <%= @todo_list.description %>
-    </p>
-    
-    <div id="todo_items_wrapper">
-      <%= render @todo_list.todo_items %>
-      <div id="form">
-        <%= render "todo_items/form" %>
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel-footer">
-    <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: "btn btn-info" %>
-    <%= link_to 'Back', todo_lists_path, class: "btn btn-warning" %>
-  </div>
+<div class="tdl_links center">
+  <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: "btn btn-info" %>
+  <%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <%= link_to 'Back', todo_lists_path, class: "btn btn-warning" %>
 </div>

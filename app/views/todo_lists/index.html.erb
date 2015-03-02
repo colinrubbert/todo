@@ -1,37 +1,13 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h1>Current To Do Lists</h1>
+<div class="row-fluid">
+<% @todo_lists.each do |todo_list| %>
+  <div class="list_index center">
+    <h2 class="tdl_title"><%= link_to todo_list.title, todo_list %></h2>
+    <p class="tdl_sub_title"><%= todo_list.description %></p>
   </div>
-  
-  <div class="panel-body">
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Created By</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+<% end %>
 
-      <tbody>
-        <% @todo_lists.each do |todo_list| %>
-          <tr>
-              <td><%= todo_list.title %></td>
-              <td><%= todo_list.description %></td>
-              <td><%= todo_list.user.email %></td>
-              <td><%= link_to 'Show', todo_list %></td>
-              <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-              <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-    <br>
-  <div class="panel-footer">
-    <%= link_to 'New Todo list', new_todo_list_path, class: "btn btn-info" %>
-    <%= link_to "Log Out", destroy_user_session_path,  class: "btn btn-warning", method: :delete %>
-  </div>
+<div class="tdl_links center">
+  <%= link_to 'New Todo list', new_todo_list_path %>
+  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+</div>
 </div>
