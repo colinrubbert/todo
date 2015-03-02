@@ -1,3 +1,4 @@
+<div class="row-fluid">
 <%= form_for(@todo_list) do |f| %>
   <% if @todo_list.errors.any? %>
     <div id="error_explanation">
@@ -23,3 +24,4 @@
     <%= f.submit class: "form-control btn btn-info" %>
   </div>
 <% end %>
+</div>
