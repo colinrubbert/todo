@@ -5,6 +5,14 @@ $body-bg: rgba(30, 130, 76, .7);
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+a {
+  color: #000;
+}
+
+a:hover{
+  color: #fff;
+}
+
 .center {
   text-align: center;
 }
@@ -82,11 +90,7 @@ $body-bg: rgba(30, 130, 76, .7);
 }
 
 .tdl_links {
-  margin-bottom: 25px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 25px;
 }
 
 i {
