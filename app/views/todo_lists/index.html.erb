@@ -1,6 +1,6 @@
 <div class="row-fluid">
   <% @todo_lists.each do |todo_list| %>
-    <div class="list_index center">
+    <div class="list_index">
       <h1 class="tdl_title"><%= link_to todo_list.title, todo_list %></h1>
       <p class="tdl_sub_title"><%= todo_list.description %></p>
     </div>
@@ -8,11 +8,10 @@
 
   <div class="tdl_links center">
     <%= link_to new_todo_list_path do %>
-      <i class="fa fa-plus fa-3x">New</i>
+      <i class="fa fa-plus fa-3x fa_btn">New</i>
     <% end %>
-    &nbsp;
     <%= link_to destroy_user_session_path, method: :delete do %>
-      <i class="fa fa-sign-out fa-3x">Log Out</i>
+      <i class="fa fa-sign-out fa-3x fa_btn">Log Out</i>
     <% end %>
   </div>
 </div>

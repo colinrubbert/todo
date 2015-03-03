@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Philosopher:400,700);
 
-$body-bg:                         rgba(149, 165, 166, .7);
+
 $font-family-sans-serif:          'Philosopher', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 
@@ -13,7 +13,9 @@ body {
   background: -webkit-linear-gradient(40deg, rgb(149, 165, 166) 25%, rgb(189, 195, 199) 70%);
   background: -o-linear-gradient(40deg, rgb(149, 165, 166) 25%, rgb(189, 195, 199) 70%);
   background: -ms-linear-gradient(40deg, rgb(149, 165, 166) 25%, rgb(189, 195, 199) 70%);
-  background: linear-gradient(130deg, rgb(149, 165, 166) 25%, rgb(189, 195, 199) 60%) 
+  background: linear-gradient(130deg, rgb(149, 165, 166) 25%, rgb(189, 195, 199) 60%);
+  background-repeat: none;
+  background-size: 100%;
 }
 
 a {
@@ -54,14 +56,16 @@ a:hover{
   word-spacing: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  margin: auto;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .tdl_sub_title {
   text-align: center;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -111,11 +115,13 @@ a:hover{
 
 i {
   color: #E4F1FE;
+  text-decoration: none;
+  &:hover {
+    color: #000;
+    text-decoration: none;
+  }
 }
 
-i:hover {
-  color: #000;
-}
 
 .form-control {
   margin-left: auto;
@@ -150,13 +156,32 @@ label {
 }
 
 input[type="text"] {
-  width: 70%;
+  width: 60%;
   height: 40px;
   border-radius: 5px;
+  outline: none;
+  border: none;
 }
 
 input[type="submit"] {
+  background: rgba(250, 250, 250, 1);
+  color: rgba(0, 0, 0, 1);
   width: 20%;
   height: 40px;
   border-radius: 5px;
+  outline: none;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: rgba(0, 0, 0, 1);
+    color: rgba(250, 250, 250, 1);
+  }
+}
+
+.fa_btn {
+  padding: 25px 25px;
+}
+
+a:hover {
+  text-decoration: none;
 }
