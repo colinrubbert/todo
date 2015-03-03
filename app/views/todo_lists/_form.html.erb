@@ -21,7 +21,8 @@
     <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit class: "form-control btn btn-info" %>
+    <%= f.submit class: "btn btn-lg" %>
+    <%= link_to 'Cancel', todo_lists_path, class: "btn btn-danger btn-lg" %>
   </div>
 <% end %>
 </div>
