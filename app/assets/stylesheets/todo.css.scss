@@ -44,7 +44,7 @@ a:hover{
   background: -ms-linear-gradient(40deg, rgb(30, 139, 195) 25%, rgb(68, 108, 179) 70%);
   background: linear-gradient(130deg, rgb(30, 139, 195) 25%, rgb(68, 108, 179) 70%);
 	margin: auto;
-	border-radius: 7px;
+	border-radius: 5px;
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.3);
 	padding: 1em 0;
@@ -53,6 +53,7 @@ a:hover{
 .tdl_title {
   text-align: center;
   font-size: 50px;
+  font-weight: 700;
   word-spacing: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -68,6 +69,7 @@ a:hover{
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  border-raidus: 3px;
 }
 
 .list_index {
@@ -155,12 +157,18 @@ label {
   margin-right: auto;
 }
 
-input[type="text"] {
+input[type="text"], textarea {
   width: 60%;
   height: 40px;
   border-radius: 5px;
   outline: none;
   border: none;
+  padding: .75em .5em;
+}
+
+textarea {
+  height: 200px;
+  font-size: 25px;
 }
 
 input[type="submit"] {
@@ -184,4 +192,13 @@ input[type="submit"] {
 
 a:hover {
   text-decoration: none;
+}
+
+.btn {
+  white-space: normal;
+  width: 100%;
+}
+
+.test {
+  font-weight: 700;
 }
