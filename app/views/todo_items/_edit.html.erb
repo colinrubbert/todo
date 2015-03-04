@@ -1,0 +1,26 @@
+<div class="row-fluid">
+  <%= form_for(@todo_item do |f| %>
+    <% if @todo_item.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@todo_item.errors.count, "error") %> prohibited this todo_list from being saved:</h2>
+
+        <ul>
+          <% @todo_item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="todo_item_edit">
+      <%= f.label :content %><br>
+      <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+      <%= link_to todo_list_todo_items_path do %>
+        <i class="fa fa-times fa-2x fa_btn">Cancel</i>
+      <% end %>
+    </div>
+  <% end %>
+</div>

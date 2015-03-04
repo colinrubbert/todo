@@ -1,6 +1,6 @@
 class TodoItemsController < ApplicationController
   before_action :set_todo_list
-  before_action :set_todo_item, except: [:create]
+  before_action :set_todo_item, except: [:create, :edit]
   
   def create
     @todo_item = @todo_list.todo_items.create(todo_item_params)
@@ -21,6 +21,10 @@ class TodoItemsController < ApplicationController
     redirect_to @todo_list, notice: "Todo item completed."
   end
   
+  def edit
+    @todo_item.update_attribute(todo_item_params)
+    redirect_to @todo_list, notice: "Todo item edited."
+  end
   
   private
   
