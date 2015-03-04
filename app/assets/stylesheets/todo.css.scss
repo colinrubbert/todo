@@ -7,6 +7,10 @@ $font-family-sans-serif:          'Philosopher', 'Helvetica Neue', Helvetica, Ar
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+html {
+  height: 100%;
+}
+
 body {
   background: rgba(149, 165, 166, .7);
   background: -moz-linear-gradient(40deg, rgb(149, 165, 166) 25%, rgb(189, 195, 199) 70%);
@@ -50,10 +54,14 @@ a:hover{
 	padding: 1em 0;
 }
 
+.list_index {
+  padding: 2em;
+  border-bottom: 1px solid #fff;
+}
+
 .tdl_title {
   text-align: center;
   font-size: 50px;
-  font-weight: 700;
   word-spacing: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -70,11 +78,6 @@ a:hover{
   margin-left: auto;
   margin-right: auto;
   border-raidus: 3px;
-}
-
-.list_index {
-  padding: 2em;
-  border-bottom: 1px solid #fff;
 }
 
 .row {
@@ -199,6 +202,6 @@ a:hover {
   width: 100%;
 }
 
-.test {
+.hev {
   font-weight: 700;
 }
