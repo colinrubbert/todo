@@ -7,7 +7,7 @@
           <% end %>
         </div>  
         <div class="todo_item">
-          <p style="opacity: 0.4";><strike><%= todo_item.content %></strike></p>
+          <p style="opacity: 0.4";><strike><%= link_to todo_item.content %></strike></p>
         </div>
         <div class="todo_item_edit">
           <p><%=link_to todo_item.edited_item %></p>
